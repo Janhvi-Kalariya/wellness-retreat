@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const Header = () => {
-    // const { head } = props;
     return(
         <>
         <header className='bg-[#1C3252]'>
