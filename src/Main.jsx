@@ -45,7 +45,7 @@ function Main() {
   const scrollLeft = () => {
       if (carouselRef.current) {
           carouselRef.current.scrollBy({
-              left: -360, // Adjust the scroll amount as needed
+              left: -360, 
               behavior: 'smooth'
           });
       }
@@ -54,7 +54,7 @@ function Main() {
   const scrollRight = () => {
       if (carouselRef.current) {
           carouselRef.current.scrollBy({
-              left: 360, // Adjust the scroll amount as needed
+              left: 360, 
               behavior: 'smooth'
           });
       }
@@ -103,10 +103,6 @@ function Main() {
   const [openType, setOpenType] = React.useState(false);
   
     const handleTypeFilterChange = (event) => {
-      // setType(event.target.value);
-      // const filteredCards = retreatData.filter(data => data.condition.includes(event.target.value));
-      // console.log(filteredCards,"filteredCards")
-      // setRetreatData(filteredCards);
       const selectedType = event.target.value;
       setType(selectedType);
 
@@ -127,14 +123,10 @@ function Main() {
     };
 
     function formatDate(unixTime) {
-      const date1 = new Date(unixTime * 1000); // Convert Unix timestamp to milliseconds
+      const date1 = new Date(unixTime * 1000);
       const year = date1.getFullYear();
-      const month = String(date1.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+      const month = String(date1.getMonth() + 1).padStart(2, '0');
       const day = String(date1.getDate()).padStart(2, '0');
-      // const hours = String(date.getHours()).padStart(2, '0');
-      // const minutes = String(date.getMinutes()).padStart(2, '0');
-      // const seconds = String(date.getSeconds()).padStart(2, '0');
-      // console.log(date,"date")
     
       return `${day}-${month}-${year}`;
     }
@@ -187,11 +179,6 @@ function Main() {
                         <MenuItem key={index} value={condition}>{condition}</MenuItem>
                       );
                     })}
-                    {/* {retreatData?.map((item, index) => {
-                      return (
-                        <MenuItem value={item.condition}>{item.condition}</MenuItem>
-                      );
-                    })} */}
                     </Select>
                 </FormControl>
                 </div>
@@ -208,26 +195,11 @@ function Main() {
                   onChange={handleSearchChange}
                   style={{minWidth:"300px"}}
                   />
-                  {/* <button class="btn btn-outline-success" type="submit">Search</button> */}
                 </form>
               </div>
             </div>
             <div className='wrapper gap-5'>
                 <div className='carousel' ref={carouselRef}>
-                {/* {retreatData?.map((item, index) => {
-                    return (
-                        <Card
-                        className="card"
-                        key={index}
-                        img={item.image}
-                        title={item.title}
-                        description={item.condition}
-                        date={item.date}
-                        location={item.location}
-                        price={item.price}
-                    />
-                    );
-                })} */}
                 {filteredData?.map((item, index) => (
                   <Card
                     className="card"
