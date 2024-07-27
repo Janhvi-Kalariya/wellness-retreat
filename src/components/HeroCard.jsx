@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'; 
 
-const HeroCard = (props) => {
-    // const { head } = props;
+const HeroCard = () => {
     return(
         <>
         <div className='bg-[#E0D9CF] rounded-xl'>
